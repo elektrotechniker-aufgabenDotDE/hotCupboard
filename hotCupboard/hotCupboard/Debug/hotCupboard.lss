@@ -1,0 +1,353 @@
+
+hotCupboard.elf:     file format elf32-avr
+
+Sections:
+Idx Name          Size      VMA       LMA       File off  Algn
+  0 .data         00000000  00800100  00800100  000001d6  2**0
+                  CONTENTS, ALLOC, LOAD, DATA
+  1 .text         00000182  00000000  00000000  00000054  2**1
+                  CONTENTS, ALLOC, LOAD, READONLY, CODE
+  2 .comment      00000030  00000000  00000000  000001d6  2**0
+                  CONTENTS, READONLY
+  3 .note.gnu.avr.deviceinfo 00000040  00000000  00000000  00000208  2**2
+                  CONTENTS, READONLY
+  4 .debug_aranges 00000038  00000000  00000000  00000248  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  5 .debug_info   000007d2  00000000  00000000  00000280  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  6 .debug_abbrev 000006c1  00000000  00000000  00000a52  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  7 .debug_line   0000064e  00000000  00000000  00001113  2**0
+                  CONTENTS, READONLY, DEBUGGING
+  8 .debug_frame  00000064  00000000  00000000  00001764  2**2
+                  CONTENTS, READONLY, DEBUGGING
+  9 .debug_str    00010771  00000000  00000000  000017c8  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 10 .debug_loc    0000008d  00000000  00000000  00011f39  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 11 .debug_ranges 00000028  00000000  00000000  00011fc6  2**0
+                  CONTENTS, READONLY, DEBUGGING
+ 12 .debug_macro  00000368  00000000  00000000  00011fee  2**0
+                  CONTENTS, READONLY, DEBUGGING
+
+Disassembly of section .text:
+
+00000000 <__vectors>:
+   0:	33 c0       	rjmp	.+102    	; 0x68 <__ctors_end>
+   2:	00 00       	nop
+   4:	41 c0       	rjmp	.+130    	; 0x88 <__bad_interrupt>
+   6:	00 00       	nop
+   8:	3f c0       	rjmp	.+126    	; 0x88 <__bad_interrupt>
+   a:	00 00       	nop
+   c:	3d c0       	rjmp	.+122    	; 0x88 <__bad_interrupt>
+   e:	00 00       	nop
+  10:	3b c0       	rjmp	.+118    	; 0x88 <__bad_interrupt>
+  12:	00 00       	nop
+  14:	39 c0       	rjmp	.+114    	; 0x88 <__bad_interrupt>
+  16:	00 00       	nop
+  18:	37 c0       	rjmp	.+110    	; 0x88 <__bad_interrupt>
+  1a:	00 00       	nop
+  1c:	35 c0       	rjmp	.+106    	; 0x88 <__bad_interrupt>
+  1e:	00 00       	nop
+  20:	33 c0       	rjmp	.+102    	; 0x88 <__bad_interrupt>
+  22:	00 00       	nop
+  24:	31 c0       	rjmp	.+98     	; 0x88 <__bad_interrupt>
+  26:	00 00       	nop
+  28:	2f c0       	rjmp	.+94     	; 0x88 <__bad_interrupt>
+  2a:	00 00       	nop
+  2c:	2d c0       	rjmp	.+90     	; 0x88 <__bad_interrupt>
+  2e:	00 00       	nop
+  30:	2b c0       	rjmp	.+86     	; 0x88 <__bad_interrupt>
+  32:	00 00       	nop
+  34:	29 c0       	rjmp	.+82     	; 0x88 <__bad_interrupt>
+  36:	00 00       	nop
+  38:	27 c0       	rjmp	.+78     	; 0x88 <__bad_interrupt>
+  3a:	00 00       	nop
+  3c:	25 c0       	rjmp	.+74     	; 0x88 <__bad_interrupt>
+  3e:	00 00       	nop
+  40:	23 c0       	rjmp	.+70     	; 0x88 <__bad_interrupt>
+  42:	00 00       	nop
+  44:	21 c0       	rjmp	.+66     	; 0x88 <__bad_interrupt>
+  46:	00 00       	nop
+  48:	1f c0       	rjmp	.+62     	; 0x88 <__bad_interrupt>
+  4a:	00 00       	nop
+  4c:	1d c0       	rjmp	.+58     	; 0x88 <__bad_interrupt>
+  4e:	00 00       	nop
+  50:	1b c0       	rjmp	.+54     	; 0x88 <__bad_interrupt>
+  52:	00 00       	nop
+  54:	19 c0       	rjmp	.+50     	; 0x88 <__bad_interrupt>
+  56:	00 00       	nop
+  58:	17 c0       	rjmp	.+46     	; 0x88 <__bad_interrupt>
+  5a:	00 00       	nop
+  5c:	15 c0       	rjmp	.+42     	; 0x88 <__bad_interrupt>
+  5e:	00 00       	nop
+  60:	13 c0       	rjmp	.+38     	; 0x88 <__bad_interrupt>
+  62:	00 00       	nop
+  64:	11 c0       	rjmp	.+34     	; 0x88 <__bad_interrupt>
+	...
+
+00000068 <__ctors_end>:
+  68:	11 24       	eor	r1, r1
+  6a:	1f be       	out	0x3f, r1	; 63
+  6c:	cf ef       	ldi	r28, 0xFF	; 255
+  6e:	d8 e0       	ldi	r29, 0x08	; 8
+  70:	de bf       	out	0x3e, r29	; 62
+  72:	cd bf       	out	0x3d, r28	; 61
+
+00000074 <__do_clear_bss>:
+  74:	21 e0       	ldi	r18, 0x01	; 1
+  76:	a0 e0       	ldi	r26, 0x00	; 0
+  78:	b1 e0       	ldi	r27, 0x01	; 1
+  7a:	01 c0       	rjmp	.+2      	; 0x7e <.do_clear_bss_start>
+
+0000007c <.do_clear_bss_loop>:
+  7c:	1d 92       	st	X+, r1
+
+0000007e <.do_clear_bss_start>:
+  7e:	a0 30       	cpi	r26, 0x00	; 0
+  80:	b2 07       	cpc	r27, r18
+  82:	e1 f7       	brne	.-8      	; 0x7c <.do_clear_bss_loop>
+  84:	1d d0       	rcall	.+58     	; 0xc0 <main>
+  86:	7b c0       	rjmp	.+246    	; 0x17e <_exit>
+
+00000088 <__bad_interrupt>:
+  88:	bb cf       	rjmp	.-138    	; 0x0 <__vectors>
+
+0000008a <PWM_disable>:
+
+volatile bool state = false;
+
+void PWM_disable (void)
+{
+	TCCR0A &= ~(1<<COM0A1);
+  8a:	84 b5       	in	r24, 0x24	; 36
+  8c:	8f 77       	andi	r24, 0x7F	; 127
+  8e:	84 bd       	out	0x24, r24	; 36
+	TCCR0A &= ~(1<<COM0B1);
+  90:	84 b5       	in	r24, 0x24	; 36
+  92:	8f 7d       	andi	r24, 0xDF	; 223
+  94:	84 bd       	out	0x24, r24	; 36
+  96:	08 95       	ret
+
+00000098 <PWM_enable>:
+};
+
+void PWM_enable (void)
+{
+	TCCR0A |= (1<<COM0A1);
+  98:	84 b5       	in	r24, 0x24	; 36
+  9a:	80 68       	ori	r24, 0x80	; 128
+  9c:	84 bd       	out	0x24, r24	; 36
+	TCCR0A |= (1<<COM0B1);
+  9e:	84 b5       	in	r24, 0x24	; 36
+  a0:	80 62       	ori	r24, 0x20	; 32
+  a2:	84 bd       	out	0x24, r24	; 36
+  a4:	08 95       	ret
+
+000000a6 <PWM_init>:
+	state = true;	
+}*/
+
+void PWM_init(void)
+{
+	DDRD |= (1<< DDD6);
+  a6:	56 9a       	sbi	0x0a, 6	; 10
+	DDRD |= (1<< DDD5);
+  a8:	55 9a       	sbi	0x0a, 5	; 10
+	OCR0A = 127;
+  aa:	8f e7       	ldi	r24, 0x7F	; 127
+  ac:	87 bd       	out	0x27, r24	; 39
+	OCR0B = 191;
+  ae:	8f eb       	ldi	r24, 0xBF	; 191
+  b0:	88 bd       	out	0x28, r24	; 40
+	TCCR0A |= (1<<WGM01) | (1<<WGM00);
+  b2:	84 b5       	in	r24, 0x24	; 36
+  b4:	83 60       	ori	r24, 0x03	; 3
+  b6:	84 bd       	out	0x24, r24	; 36
+	TCCR0B |= (1<<CS02) | (1<<CS00);
+  b8:	85 b5       	in	r24, 0x25	; 37
+  ba:	85 60       	ori	r24, 0x05	; 5
+  bc:	85 bd       	out	0x25, r24	; 37
+  be:	08 95       	ret
+
+000000c0 <main>:
+}
+
+int main(void)
+{
+  c0:	cf 93       	push	r28
+  c2:	df 93       	push	r29
+  c4:	cd b7       	in	r28, 0x3d	; 61
+  c6:	de b7       	in	r29, 0x3e	; 62
+  c8:	67 97       	sbiw	r28, 0x17	; 23
+  ca:	0f b6       	in	r0, 0x3f	; 63
+  cc:	f8 94       	cli
+  ce:	de bf       	out	0x3e, r29	; 62
+  d0:	0f be       	out	0x3f, r0	; 63
+  d2:	cd bf       	out	0x3d, r28	; 61
+	bool state[21];
+	bool boolOpto;
+	volatile uint16_t intCount = 0;
+  d4:	1f 8a       	std	Y+23, r1	; 0x17
+  d6:	1e 8a       	std	Y+22, r1	; 0x16
+	
+	DDRB |= (1<<DDB5);
+  d8:	25 9a       	sbi	0x04, 5	; 4
+	DDRB &= ~(1<<DDB4);
+  da:	24 98       	cbi	0x04, 4	; 4
+	DDRB &= ~(1<<DDB3);
+  dc:	23 98       	cbi	0x04, 3	; 4
+// *** Pull up ***
+	
+//	PORTB |= (1 << PORTB4);
+//	PORTB |= (1 << PORTB3);
+	
+	PORTB &= ~(1<<PORTB4);
+  de:	2c 98       	cbi	0x05, 4	; 5
+	PORTB &= ~(1<<PORTB3);
+  e0:	2b 98       	cbi	0x05, 3	; 5
+	
+	//PCMSK0 |= (1<<PCINT4);
+	//PCICR |= (1<<PCIE0);
+	
+	PWM_init();
+  e2:	e1 df       	rcall	.-62     	; 0xa6 <PWM_init>
+	
+	LED_ON;
+  e4:	2d 9a       	sbi	0x05, 5	; 5
+					if(OPTO_PRESSED == 0x00)
+					// *** if (OPTO_PRESSED == 0x10) ***
+					{
+						PWM_enable();
+						LED_OFF;
+						state[intCount] = true;
+  e6:	11 e0       	ldi	r17, 0x01	; 1
+	
+	LED_ON;
+    /* Replace with your application code */
+    while (1) 
+    {
+		for (intCount = 0; intCount < 21; intCount++)
+  e8:	1f 8a       	std	Y+23, r1	; 0x17
+  ea:	1e 8a       	std	Y+22, r1	; 0x16
+  ec:	8e 89       	ldd	r24, Y+22	; 0x16
+  ee:	9f 89       	ldd	r25, Y+23	; 0x17
+  f0:	45 97       	sbiw	r24, 0x15	; 21
+  f2:	30 f5       	brcc	.+76     	; 0x140 <main+0x80>
+		{
+					if(OPTO_PRESSED == 0x00)
+  f4:	1c 99       	sbic	0x03, 4	; 3
+					// *** if (OPTO_PRESSED == 0x10) ***
+					{
+						PWM_enable();
+  f6:	0c c0       	rjmp	.+24     	; 0x110 <main+0x50>
+  f8:	cf df       	rcall	.-98     	; 0x98 <PWM_enable>
+						LED_OFF;
+  fa:	2d 98       	cbi	0x05, 5	; 5
+						state[intCount] = true;
+  fc:	ee 89       	ldd	r30, Y+22	; 0x16
+  fe:	ff 89       	ldd	r31, Y+23	; 0x17
+ 100:	81 e0       	ldi	r24, 0x01	; 1
+ 102:	90 e0       	ldi	r25, 0x00	; 0
+ 104:	8c 0f       	add	r24, r28
+ 106:	9d 1f       	adc	r25, r29
+ 108:	e8 0f       	add	r30, r24
+ 10a:	f9 1f       	adc	r31, r25
+ 10c:	10 83       	st	Z, r17
+ 10e:	09 c0       	rjmp	.+18     	; 0x122 <main+0x62>
+					}
+					else
+					{
+						state[intCount] = false;
+ 110:	ee 89       	ldd	r30, Y+22	; 0x16
+ 112:	ff 89       	ldd	r31, Y+23	; 0x17
+ 114:	81 e0       	ldi	r24, 0x01	; 1
+ 116:	90 e0       	ldi	r25, 0x00	; 0
+ 118:	8c 0f       	add	r24, r28
+ 11a:	9d 1f       	adc	r25, r29
+ 11c:	e8 0f       	add	r30, r24
+ 11e:	f9 1f       	adc	r31, r25
+ 120:	10 82       	st	Z, r1
+	#else
+		//round up by default
+		__ticks_dc = (uint32_t)(ceil(fabs(__tmp)));
+	#endif
+
+	__builtin_avr_delay_cycles(__ticks_dc);
+ 122:	8f e9       	ldi	r24, 0x9F	; 159
+ 124:	9f e0       	ldi	r25, 0x0F	; 15
+ 126:	01 97       	sbiw	r24, 0x01	; 1
+ 128:	f1 f7       	brne	.-4      	; 0x126 <main+0x66>
+ 12a:	00 c0       	rjmp	.+0      	; 0x12c <main+0x6c>
+ 12c:	00 00       	nop
+	
+	LED_ON;
+    /* Replace with your application code */
+    while (1) 
+    {
+		for (intCount = 0; intCount < 21; intCount++)
+ 12e:	8e 89       	ldd	r24, Y+22	; 0x16
+ 130:	9f 89       	ldd	r25, Y+23	; 0x17
+ 132:	01 96       	adiw	r24, 0x01	; 1
+ 134:	9f 8b       	std	Y+23, r25	; 0x17
+ 136:	8e 8b       	std	Y+22, r24	; 0x16
+ 138:	8e 89       	ldd	r24, Y+22	; 0x16
+ 13a:	9f 89       	ldd	r25, Y+23	; 0x17
+ 13c:	45 97       	sbiw	r24, 0x15	; 21
+ 13e:	d0 f2       	brcs	.-76     	; 0xf4 <main+0x34>
+						state[intCount] = false;
+					}
+					_delay_ms(1);	
+		}
+		
+		if(SWITCH_PRESSED == 0x00)
+ 140:	1b 99       	sbic	0x03, 3	; 3
+ 142:	d2 cf       	rjmp	.-92     	; 0xe8 <main+0x28>
+		{
+			for (intCount = 0; intCount < 21; intCount++)
+ 144:	1f 8a       	std	Y+23, r1	; 0x17
+ 146:	1e 8a       	std	Y+22, r1	; 0x16
+ 148:	8e 89       	ldd	r24, Y+22	; 0x16
+ 14a:	9f 89       	ldd	r25, Y+23	; 0x17
+ 14c:	45 97       	sbiw	r24, 0x15	; 21
+ 14e:	60 f6       	brcc	.-104    	; 0xe8 <main+0x28>
+			{
+				if (state[intCount] == false)
+ 150:	ee 89       	ldd	r30, Y+22	; 0x16
+ 152:	ff 89       	ldd	r31, Y+23	; 0x17
+ 154:	81 e0       	ldi	r24, 0x01	; 1
+ 156:	90 e0       	ldi	r25, 0x00	; 0
+ 158:	8c 0f       	add	r24, r28
+ 15a:	9d 1f       	adc	r25, r29
+ 15c:	e8 0f       	add	r30, r24
+ 15e:	f9 1f       	adc	r31, r25
+ 160:	80 81       	ld	r24, Z
+ 162:	81 11       	cpse	r24, r1
+				{
+					PWM_disable();
+ 164:	02 c0       	rjmp	.+4      	; 0x16a <main+0xaa>
+ 166:	91 df       	rcall	.-222    	; 0x8a <PWM_disable>
+					LED_ON;	
+ 168:	2d 9a       	sbi	0x05, 5	; 5
+					_delay_ms(1);	
+		}
+		
+		if(SWITCH_PRESSED == 0x00)
+		{
+			for (intCount = 0; intCount < 21; intCount++)
+ 16a:	8e 89       	ldd	r24, Y+22	; 0x16
+ 16c:	9f 89       	ldd	r25, Y+23	; 0x17
+ 16e:	01 96       	adiw	r24, 0x01	; 1
+ 170:	9f 8b       	std	Y+23, r25	; 0x17
+ 172:	8e 8b       	std	Y+22, r24	; 0x16
+ 174:	8e 89       	ldd	r24, Y+22	; 0x16
+ 176:	9f 89       	ldd	r25, Y+23	; 0x17
+ 178:	45 97       	sbiw	r24, 0x15	; 21
+ 17a:	50 f3       	brcs	.-44     	; 0x150 <main+0x90>
+ 17c:	b5 cf       	rjmp	.-150    	; 0xe8 <main+0x28>
+
+0000017e <_exit>:
+ 17e:	f8 94       	cli
+
+00000180 <__stop_program>:
+ 180:	ff cf       	rjmp	.-2      	; 0x180 <__stop_program>
